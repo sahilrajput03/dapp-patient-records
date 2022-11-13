@@ -11,12 +11,14 @@
   "dependencies": {
     "@types/crypto-js": "^4.1.1",
     "@types/node": "18.11.9",
+    "@types/node-rsa": "^1.1.1",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.8",
     "crypto-js": "^4.1.1",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.3",
     "next": "13.0.3",
+    "node-rsa": "^1.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "4.8.4"

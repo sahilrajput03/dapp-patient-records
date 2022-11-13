@@ -3,6 +3,10 @@ import Image from 'next/image'
 import ClientOnly from '../components/ClientOnly'
 import styles from '../styles/Home.module.css'
 import CryptoJS from 'crypto-js'
+import NodeRSA from 'node-rsa'
+
+const format_private_key = 'pkcs8-private-pem'
+const format_public_key = 'pkcs8-public-pem'
 
 export default function Home() {
 	return (
@@ -16,6 +20,7 @@ export default function Home() {
 			<main>
 				<ClientOnly>
 					{/* <TestingAes /> */}
+					<FilePicker />
 				</ClientOnly>
 			</main>
 
@@ -24,7 +29,21 @@ export default function Home() {
 	)
 }
 
-const SECRET_KEY = 'secret key 123'
+const FilePicker = () => {
+	const onChangeFile = (e: any) => {
+		const file = e.target.files[0]
+		console.log('got file?', file)
+		Object.assign(window, {file}) // `evt.target.files`
+	}
+
+	return (
+		<div>
+			<input type={'file'} onChange={onChangeFile} multiple={true} />
+		</div>
+	)
+}
+
+const SECRET_KEY = 'my user password'
 
 const TestingAes = () => {
 	const encrypt = (private_key: string) => {
