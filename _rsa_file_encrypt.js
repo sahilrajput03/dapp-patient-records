@@ -23,8 +23,7 @@ let keyImported = key.importKey(key_data_priv_key, format_private_key)
 
 // key.encrypt(inputData, {string=output_encoding}, {string=source_encoding})
 const encrypted = key.encrypt(file_binary, 'binary', 'utf8')
-// console.log('encrypted: ', encrypted)
-// console.log('encrypted typeof: ', typeof encrypted) // string
+// console.log('encrypted: ', encrypted) // `typeof encrypted` = string
 
 try {
 	// @ts-ignore
